@@ -27,8 +27,8 @@ Color AMMON = new Color(135, 206, 235);
 Color JOSH = new Color(0, 0, 128);
 Color TANNER = new Color(100, 149, 237);
 
-Color TOP_COLOR = WHITE;
-Color BOTTOM_COLOR = BLUE;
+Color TOP_COLOR = AMMON;
+Color BOTTOM_COLOR = SAND;
 
 // DOTS PRESETS
 int MAX_DOTS = 500;
@@ -71,5 +71,25 @@ void draw() {
   for (Dot dot : dots) {
     if (DRAW_DOTS) dot.drawDot(DOTS_ARE_WHITE);
     dot.advance();
+  }
+}
+
+// Handle key presses
+void keyPressed() {
+  // r and f to cycle rainbow of top and bottom colors, respectively
+  if (key == 'r' || key == 'R') {
+    if (checkOnRainbowCycle(TOP_COLOR)) { cycleRainbow(TOP_COLOR, 1); }
+  }
+  if (key == 'f' || key == 'F') {
+    if (checkOnRainbowCycle(BOTTOM_COLOR)) { cycleRainbow(BOTTOM_COLOR, 1); }
+  }
+  
+  // w and s to toggle white/black and visible dots, respectively
+  
+  if (key == 'w' || key == 'W') {
+    DOTS_ARE_WHITE = !DOTS_ARE_WHITE;
+  }
+  if (key == 's' || key == 'S') {
+    DRAW_DOTS = !DRAW_DOTS;
   }
 }

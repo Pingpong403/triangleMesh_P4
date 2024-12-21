@@ -9,6 +9,12 @@ class Color {
     b = rand.nextInt(0, 255);
   }
   
+  public Color(Color c) {
+    this.r = c.getR();
+    this.g = c.getG();
+    this.b = c.getB();
+  }
+  
   public Color(int value) {
     r = value;
     g = value;
@@ -42,4 +48,11 @@ class Color {
     
     return new Color((int)(r + diffR * ratio), (int)(g + diffG * ratio), (int)(b + diffB * ratio));
   }
+  
+  public void upR(int amount) { r += amount; }
+  public void upG(int amount) { g += amount; }
+  public void upB(int amount) { b += amount; }
+  public void downR(int amount) { r -= amount; }
+  public void downG(int amount) { g -= amount; }
+  public void downB(int amount) { b -= amount; }
 }
