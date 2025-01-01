@@ -27,8 +27,8 @@ Color AMMON = new Color(135, 206, 235);
 Color JOSH = new Color(0, 0, 128);
 Color TANNER = new Color(100, 149, 237);
 
-Color TOP_COLOR = AMMON;
-Color BOTTOM_COLOR = SAND;
+Color TOP_COLOR = BLUE;
+Color BOTTOM_COLOR = RED;
 
 // DOTS PRESETS
 int MAX_DOTS = 500;
@@ -81,6 +81,11 @@ void keyPressed() {
     if (checkOnRainbowCycle(TOP_COLOR)) { cycleRainbow(TOP_COLOR, 1); }
   }
   if (key == 'f' || key == 'F') {
+    if (checkOnRainbowCycle(BOTTOM_COLOR)) { cycleRainbow(BOTTOM_COLOR, 1); }
+  }
+  // v to cycle both colors
+  if (key == 'v' || key == 'V') {
+    if (checkOnRainbowCycle(TOP_COLOR)) { cycleRainbow(TOP_COLOR, 1); }
     if (checkOnRainbowCycle(BOTTOM_COLOR)) { cycleRainbow(BOTTOM_COLOR, 1); }
   }
   
